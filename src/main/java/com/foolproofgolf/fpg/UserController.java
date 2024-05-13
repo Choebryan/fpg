@@ -1,6 +1,7 @@
 package com.foolproofgolf.fpg;
 
-import org.bson.types.ObjectId;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.foolproofgolf.fpg.db.UserRepository;
 import com.foolproofgolf.fpg.models.User;
 import com.foolproofgolf.fpg.service.UserService;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/users")
