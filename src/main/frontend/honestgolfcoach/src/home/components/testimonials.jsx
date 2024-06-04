@@ -45,7 +45,7 @@ const Testimonials = () => {
 
   return (
     <div className='w-3/4 m-auto'>
-      <div className='mt-20'>
+      <div className='my-8'>
       <Slider {...settings}>
         {testimonials.map((t, index) => (
           <div key={index} className='bg-green-800 h-[300px] text-black rounded-xl'>

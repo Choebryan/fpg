@@ -13,6 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import GentyDemo from '../../assets/GentyDemo-Regular.otf';
+import { Link } from 'react-router-dom';
 
 const pages = ['Lessons', 'Pricing', 'About', 'Book Now'];
 const settings = ['Profile', 'Account', 'Logout'];
@@ -44,7 +45,7 @@ function ResponsiveAppBar() {
           <Typography
             variant="h6"
             noWrap
-            component="a"
+            component={Link} to='/'
             href="#app-bar-with-responsive-menu"
             className='app-bar-title'
             sx={{
@@ -101,7 +102,7 @@ function ResponsiveAppBar() {
           <Typography
             variant="h5"
             noWrap
-            component="a"
+            component={Link} to='/'
             href="#app-bar-with-responsive-menu"
             sx={{
               mr: 2,
