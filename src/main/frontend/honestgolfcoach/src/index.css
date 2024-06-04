@@ -19,16 +19,24 @@ body, html {
 
 .home {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  position: relative;
 }
 
 .video-container {
-  position: absolute;
+  position: relative;
+  height: 100vh;
+  /* position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: -1;
+  height: 100vh;
+  z-index: -1; */
   /* outline: 10px solid red; */
+}
+
+.info {
+  outline: 10px solid red;
 }
 
 .video-bg {
@@ -41,7 +49,7 @@ body, html {
 }
 
 .content {
-  position: absolute;
+  /* position: absolute;
   width: 100%;
   height: 100%;
   top: 68.5px;
@@ -50,7 +58,13 @@ body, html {
   justify-content: center;
   align-items: center;
   color: rgb(243, 242, 242);
-  z-index: 1;
+  z-index: 1; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
 }
 
 .overlay {
@@ -60,7 +74,7 @@ body, html {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, .4);
-  z-index: 2;
+  /* z-index: 2; */
 }
 
 .content h1 {
@@ -79,7 +93,7 @@ body, html {
 .btn-book {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ffcc00; /* Adjust button color */
+  background-color: #e9c46a; /* Adjust button color */
   color: #333; /* Adjust button text color */
   text-decoration: none;
   border-radius: 5px;
@@ -88,10 +102,10 @@ body, html {
 }
 
 .btn-book:hover {
-  background-color: #575755; /* Adjust hover color */
+  background-color: #e2a412; /* Adjust hover color */
 }
 
-#contact {
+.footer {
   bottom: 0;
   left: 0;
   width: 100%;
