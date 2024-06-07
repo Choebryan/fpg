@@ -3,6 +3,7 @@ import ResponsiveAppBar from './components/appBar';
 import Input from 'react-phone-number-input/input';
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
+import axios from 'axios';
 
 const bookLesson = () => {
   const initialValues = {
@@ -15,6 +16,7 @@ const bookLesson = () => {
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const [isSubmit, setIsSubmit] = useState(false);
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -25,10 +27,22 @@ const bookLesson = () => {
     setFormValues({ ...formValues, phoneNumber: value });
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
     setFormErrors(validate(formValues));
     setIsSubmit(true);
+
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      try {
+        const response = await axios.post(
+          'http://localhost:8080/submitForm',
+          formValues,
+        );
+        setSubmissionSuccess(true);
+      } catch (error) {
+        console.error('There was an error sending the form!', error);
+      }
+    }
   };
 
   useEffect(() => {
@@ -142,7 +156,7 @@ const bookLesson = () => {
                 value={formValues.lessonType}
                 onChange={handleChange}
                 className='select select-bordered w-full max-w-xs mt-4'>
-                <option  disabled selected>
+                <option value='' disabled selected>
                   Select Lesson Type
                 </option>
                 <option>Single Lesson</option>
@@ -151,6 +165,11 @@ const bookLesson = () => {
               <p className='text-red-500'>{formErrors.lessonType}</p>
             </div>
             <button className='btn mt-4 mx-auto'>Book Now</button>
+            {submissionSuccess && (
+              <div className='alert alert-success' role='alert'>
+                Thank you! Honest Golf Coach will contact you shortly to schedule your first lesson!
+              </div>
+            )}
           </div>
         </form>
       </div>
