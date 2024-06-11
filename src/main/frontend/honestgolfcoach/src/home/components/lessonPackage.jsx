@@ -1,5 +1,7 @@
 import React from 'react';
 import textTestimonial from '../../assets/textTestimonial.jpeg';
+
+
 const LessonPackage = () => {
   return (
     <div className='hero min-h-screen bg-base-200'>
