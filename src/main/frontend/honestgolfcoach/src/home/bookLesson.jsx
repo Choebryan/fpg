@@ -4,6 +4,7 @@ import Input from 'react-phone-number-input/input';
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import axios from 'axios';
+import NavBar from './components/NavBar';
 
 const bookLesson = () => {
   const initialValues = {
@@ -84,7 +85,8 @@ const bookLesson = () => {
 
   return (
     <div>
-      <ResponsiveAppBar></ResponsiveAppBar>
+      {/* <ResponsiveAppBar></ResponsiveAppBar> */}
+      <NavBar></NavBar>
       <div className='container flex flex-col justify-center items-center h-screen max-w-lg w-full mx-auto'>
         <form className='flex flex-col space-y-4' onSubmit={handleSubmit}>
           <h1 className='text-xl font-bold flex justify-center'>
@@ -167,7 +169,8 @@ const bookLesson = () => {
             <button className='btn mt-4 mx-auto'>Book Now</button>
             {submissionSuccess && (
               <div className='alert alert-success' role='alert'>
-                Thank you! Honest Golf Coach will contact you shortly to schedule your first lesson!
+                Thank you! Honest Golf Coach will contact you shortly to
+                schedule your first lesson!
               </div>
             )}
           </div>

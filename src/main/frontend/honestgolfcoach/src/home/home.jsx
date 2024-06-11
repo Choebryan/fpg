@@ -5,11 +5,13 @@ import ContactInfo from './components/contactInfo';
 import Testimonials from './components/testimonials';
 import OneLesson from './components/oneLesson';
 import LessonPackage from './components/lessonPackage';
+import NavBar from './components/NavBar';
 
 const Home = () => {
   return (
     <div className='home' style={{ overflow: 'scroll' }}>
-      <ResponsiveAppBar></ResponsiveAppBar>
+      {/* <ResponsiveAppBar></ResponsiveAppBar> */}
+      <NavBar></NavBar>
       <div className='video-container'>
         <video className='video-bg' autoPlay muted loop>
           <source src={videoBg} type='video/mp4' />
