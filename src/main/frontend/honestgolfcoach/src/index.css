@@ -26,6 +26,7 @@ body, html {
 .video-container {
   position: relative;
   height: 100vh;
+  /* background-color: #1a3f29; */
   /* position: absolute;
   top: 0;
   left: 0;
@@ -33,10 +34,6 @@ body, html {
   height: 100vh;
   z-index: -1; */
   /* outline: 10px solid red; */
-}
-
-.info {
-  outline: 10px solid red;
 }
 
 .video-bg {
@@ -79,13 +76,10 @@ body, html {
 
 .content h1 {
   font-size: 3rem;
-  
-  /* outline: 2px solid red; */
   font-family: GentyDemo;
 }
 
 .content p {
-  
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
@@ -120,4 +114,92 @@ body, html {
 
 .app-bar-title {
   font-family: GentyDemo;
+}
+
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  .video-bg {
+    display: none;
+  }
+
+  .video-container {
+    background-color: #1a3f29;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.875rem;
+  }
+
+  .btn-book {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .btn-book {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .btn-book {
+    font-size: 1.2rem;
+  }
 }

@@ -4,17 +4,23 @@ const OneLesson = () => {
   return (
     <div className='hero min-h-screen bg-base-200'>
       <div className='hero-content flex-col lg:flex-row'>
-        <img src={jonsSwing} className='max-w-md rounded-lg shadow-2xl mr-8' />
+        <img
+          src={jonsSwing}
+          className='max-w-md lg:max-w-md rounded-lg shadow-2xl mb-4 lg:mr-8'
+        />
         <div>
-          <h1 className='text-3xl font-bold'>
+          <h1 className='text-3xl font-bold text-center lg:text-left'>
             See a Difference in Your Swing After Just One Lesson!
           </h1>
-          <p className='py-6 text-lg'>
+          <p className='py-6 text-lg text-center lg:text-left'>
             We'll work with you to identify swing issues, create a personalized
             plan for improvement, and get you started on the path to hitting the
-            ball with more confidence. Schedule your first lesson today for only $150!
+            ball with more confidence. Schedule your first lesson today for only
+            $150!
           </p>
-          <button className='btn btn-primary'>Get Started</button>
+          <div className='flex justify-center lg:justify-start'>
+            <button className='btn btn-primary'>Get Started</button>
+          </div>
         </div>
       </div>
     </div>
