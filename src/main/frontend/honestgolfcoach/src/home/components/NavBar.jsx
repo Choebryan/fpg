@@ -25,16 +25,16 @@ const NavBar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 ${styles.green} mx-auto flex flex-wrap w-full items-center justify-between p-2`}
+      className={`sticky top-0 z-50 ${styles.green} mx-auto flex flex-wrap w-full items-center justify-between p-1`}
       id='navbar'>
-      <nav>
+      <nav className='flex items-center'>
         <NavLink
           to='/'
-          className='pl-4 text-4xl font-bold cursor-pointer font-[GentyDemo]'>
+          className='pt-2 pl-4 text-4xl font-bold cursor-pointer font-[GentyDemo]'>
           h.
         </NavLink>
       </nav>
-      <nav className='w-1/5 flex justify-end pr-4'>
+      <nav className='w-1/5 flex justify-end pr-4 mb-1'>
         <div className='hidden md:flex justify-between w-full space-x-4'>
           <NavLinks />
         </div>

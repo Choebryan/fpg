@@ -1,14 +1,13 @@
 import React from 'react';
 import textTestimonial from '../../assets/textTestimonial.jpeg';
 
-
 const LessonPackage = () => {
   return (
     <div className='hero min-h-screen bg-base-200'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <img
           src={textTestimonial}
-          className='max-w-md rounded-lg shadow-2xl ml-8'
+          className='max-w-full lg:max-w-md rounded-lg shadow-2xl mb-4 lg:ml-8'
         />
         <div>
           <h1 className='text-4xl font-bold'>
@@ -51,8 +50,9 @@ const LessonPackage = () => {
             approach designed to help you see significant improvement – all at a
             <strong> competitive price point</strong>.
           </p>
-
-          <button className='btn btn-primary'>Get Started</button>
+          <div className='flex justify-center lg:justify-end'>
+            <button className='btn btn-primary'>Get Started</button>
+          </div>
         </div>
       </div>
     </div>
