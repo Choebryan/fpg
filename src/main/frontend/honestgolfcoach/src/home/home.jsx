@@ -6,8 +6,23 @@ import Testimonials from './components/testimonials';
 import OneLesson from './components/oneLesson';
 import LessonPackage from './components/lessonPackage';
 import NavBar from './components/NavBar';
+import { useAuth } from '../AuthProvider'; 
+import { useNavigate } from 'react-router-dom';
+
 
 const Home = () => {
+  const { isLoggedIn } = useAuth();
+  const navigate = useNavigate();
+
+  const handleBookNow = () => {
+     if (isLoggedIn) {
+      navigate('/lessons');
+     } else {
+      navigate('/signup');
+     }
+  }
+
+
   return (
     <div className='home' style={{ overflow: 'scroll' }}>
       {/* <ResponsiveAppBar></ResponsiveAppBar> */}
@@ -21,7 +36,7 @@ const Home = () => {
         <div className='content'>
           <h1>honest golf coach</h1>
           <p>Your Friendly Neighborhood Golf Coach Here to Help You</p>
-          <a href='#' className='btn-book'>
+          <a href='#' className='btn-book' onClick={handleBookNow}>
             Book Now
           </a>
         </div>

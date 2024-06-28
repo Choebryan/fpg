@@ -12,6 +12,7 @@ const NavLinks = () => {
       <NavLink to='about'>About</NavLink>
       <NavLink to='lessons'>Lessons</NavLink>
       <NavLink to='location'>Location</NavLink>
+      
     </>
   );
 };

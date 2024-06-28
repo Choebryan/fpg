@@ -4,15 +4,18 @@ import ResponsiveAppBar from './home/components/appBar';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 import Home from './home/home';
 import BookLesson from './home/bookLesson';
+import { AuthProvider } from './AuthProvider';
 
 function App() {
   return (
-    <Routes>
-      {/* <div className='App'> */}
-      <Route path='/' element={<Home />} />
-      <Route path="lessons" element={<BookLesson />}/>
-      {/* </div> */}
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        {/* <div className='App'> */}
+        <Route path='/' element={<Home />} />
+        <Route path='lessons' element={<BookLesson />} />
+        {/* </div> */}
+      </Routes>
+    </AuthProvider>
   );
 }
 
