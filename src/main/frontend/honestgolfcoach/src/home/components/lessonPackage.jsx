@@ -44,13 +44,13 @@ const LessonPackage = () => {
             specific needs.
             <br />
             <br />
-            Worried about the cost? Here's the goof news: Our 10-lesson package
+            Worried about the cost? Here's the good news: Our 10-lesson package
             saves you $500 compared to booking individual lessons. You'll
             receive personalized instruction, expert feedback, and a proven
             approach designed to help you see significant improvement – all at a
             <strong> competitive price point</strong>.
           </p>
-          <div className='flex justify-center lg:justify-end'>
+          <div >
             <button className='btn btn-primary'>Get Started</button>
           </div>
         </div>
