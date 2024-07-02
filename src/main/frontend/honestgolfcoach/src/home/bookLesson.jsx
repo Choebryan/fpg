@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import ResponsiveAppBar from './components/appBar';
 import Input from 'react-phone-number-input/input';
 import { isPossiblePhoneNumber } from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';

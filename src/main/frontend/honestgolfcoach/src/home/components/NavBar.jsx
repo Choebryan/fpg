@@ -9,10 +9,10 @@ import { Menu, X } from 'lucide-react';
 const NavLinks = () => {
   return (
     <>
-      <NavLink to='about'>About</NavLink>
-      <NavLink to='lessons'>Lessons</NavLink>
-      <NavLink to='location'>Location</NavLink>
-      
+      <NavLink to='/about'>About</NavLink>
+      <NavLink to='/lessons'>Lessons</NavLink>
+      <NavLink to='/location'>Location</NavLink>
+
     </>
   );
 };
