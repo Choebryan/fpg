@@ -12,7 +12,15 @@ import com.foolproofgolf.fpg.service.EmailService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
-public class FormController {
+public class Controller {
+
+    // @PostMapping("/signup")
+    // public ResponseEntity<String> newUser(@RequestBody UserData userData) {
+
+    // }
+
+
+
     
     @Autowired
     private EmailService emailService;
