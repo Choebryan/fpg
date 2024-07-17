@@ -66,115 +66,176 @@ const SignUp = () => {
   };
 
   return (
-    <Formik
-      initialValues={{
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: '',
-        confirmPassword: '',
-      }}
-      validationSchema={SignupSchema}
-      onSubmit={async (values, { setSubmitting }) => {
-        try {
-          // const response = await axios.post(
-          //   'http://localhost:8080/signup',
-          //   values,
-          // );
-          // if (response.status === 200) {
-          //   console.log('it worked');
-          //   navigate('/');
-          // }
-          console.log('it worked');
-        } catch (error) {
-          console.log('Error signing up: ', error);
-        } finally {
-          setSubmitting(false);
-        }
-      }}>
-      {({ isSubmitting, values, errors, touched }) => (
-        <Form>
-          <div>
-            <label>First Name</label>
-            <Field type='text' name='firstName' />
-            <ErrorMessage name='firstName' component='div' />
-          </div>
+    <div>
+      <NavBar />
+      <div className='container flex flex-col justify-center items-center h-screen max-w-lg w-full mx-auto'>
+        <Formik
+          initialValues={{
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            confirmPassword: '',
+          }}
+          validationSchema={SignupSchema}
+          onSubmit={async (values, { setSubmitting }) => {
+            try {
+              // const response = await axios.post(
+              //   'http://localhost:8080/signup',
+              //   values,
+              // );
+              // if (response.status === 200) {
+              //   console.log('it worked');
+              //   navigate('/');
+              // }
+              console.log('it worked');
+            } catch (error) {
+              console.log('Error signing up: ', error);
+            } finally {
+              setSubmitting(false);
+            }
+          }}>
+          {({ isSubmitting, values, errors, touched }) => (
+            <Form className='flex flex-col space-y-4'>
+              <h1 className='text-xl font-bold flex justify-center'>
+                Create Your Account
+              </h1>
+              <div className='border-b border-gray-300 w-full mb-4'></div>
+              <div className='flex flex-col space-y-4'>
+                <label htmlFor='firstName' className='w-1/2 mr-2'>
+                  First Name
+                </label>
+                <Field
+                  type='text'
+                  name='firstName'
+                  className='w-full focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-blue-500 rounded-md border border-gray-300 p-2.5 mt-2'
+                />
+                <ErrorMessage
+                  name='firstName'
+                  component='div'
+                  className='text-red-500'
+                />
+              </div>
 
-          <div>
-            <label>Last Name</label>
-            <Field type='text' name='lastName' />
-            <ErrorMessage name='lastName' component='div' />
-          </div>
+              <div>
+                <label htmlFor='lastName' className='w-1/2 mr-2'>
+                  Last Name
+                </label>
+                <Field
+                  type='text'
+                  name='lastName'
+                  className='w-full focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-blue-500 rounded-md border border-gray-300 p-2.5 mt-2'
+                />
+                <ErrorMessage
+                  name='lastName'
+                  component='div'
+                  className='text-red-500'
+                />
+              </div>
 
-          <div>
-            <label>Email</label>
-            <Field type='email' name='email' />
-            <ErrorMessage name='email' component='div' />
-          </div>
+              <div>
+                <label htmlFor='email' className='w-1/2 mr-2'>
+                  Email
+                </label>
+                <Field
+                  type='email'
+                  name='email'
+                  className='w-full focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-blue-500 rounded-md border border-gray-300 p-2.5 mt-2'
+                />
+                <ErrorMessage
+                  name='email'
+                  component='div'
+                  className='text-red-500'
+                />
+              </div>
 
-          <div>
-            <label>Password</label>
-            <Field type='password' name='password' />
-            <ErrorMessage name='password' component='div' />
-            <ul>
-              <li
-                className={
-                  touched.password &&
-                  !errors.password &&
-                  values.password.length >= 8
-                    ? 'text-green-500'
-                    : 'text-red-500'
-                }>
-                At least 8 characters long
-              </li>
-              <li
-                className={
-                  touched.password && /(?=.*[A-Z])/.test(values.password)
-                    ? 'text-green-500'
-                    : 'text-red-500'
-                }>
-                At least one uppercase letter
-              </li>
-              <li
-                className={
-                  touched.password && /(?=.*[a-z])/.test(values.password)
-                    ? 'text-green-500'
-                    : 'text-red-500'
-                }>
-                At least one lowercase letter
-              </li>
-              <li
-                className={
-                  touched.password && /(?=.*[0-9])/.test(values.password)
-                    ? 'text-green-500'
-                    : 'text-red-500'
-                }>
-                At least one number
-              </li>
-              <li
-                className={
-                  touched.password &&
-                  /(?=.*[!@#\$%\^&\*])/.test(values.password)
-                    ? 'text-green-500'
-                    : 'text-red-500'
-                }>
-                At least one special character
-              </li>
-            </ul>
-          </div>
+              <div>
+                <label htmlFor='password' className='w-1/2 mr-2'>
+                  Password
+                </label>
+                <Field
+                  type='password'
+                  name='password'
+                  className='w-full focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-blue-500 rounded-md border border-gray-300 p-2.5 mt-2'
+                />
+                <ErrorMessage
+                  name='password'
+                  component='div'
+                  className='text-red-500'
+                />
+                {touched.password && (
+                  <ul className='mt-2'>
+                    <li
+                      className={
+                        values.password.length >= 8
+                          ? 'text-green-500'
+                          : 'text-red-500'
+                      }>
+                      At least 8 characters long
+                    </li>
+                    <li
+                      className={
+                        /(?=.*[A-Z])/.test(values.password)
+                          ? 'text-green-500'
+                          : 'text-red-500'
+                      }>
+                      At least one uppercase letter
+                    </li>
+                    <li
+                      className={
+                        /(?=.*[a-z])/.test(values.password)
+                          ? 'text-green-500'
+                          : 'text-red-500'
+                      }>
+                      At least one lowercase letter
+                    </li>
+                    <li
+                      className={
+                        /(?=.*[0-9])/.test(values.password)
+                          ? 'text-green-500'
+                          : 'text-red-500'
+                      }>
+                      At least one number
+                    </li>
+                    <li
+                      className={
+                        /(?=.*[!@#\$%\^&\*])/.test(values.password)
+                          ? 'text-green-500'
+                          : 'text-red-500'
+                      }>
+                      At least one special character
+                    </li>
+                  </ul>
+                )}
+              </div>
 
-          <div>
-            <label>Confirm Password</label>
-            <Field type='password' name='confirmPassword' />
-            <ErrorMessage name='confirmPassword' component='div' />
-          </div>
+              <div>
+                <label htmlFor='confirmPassword' className='w-1/2 mr-2'>
+                  Confirm Password
+                </label>
+                <Field
+                  type='password'
+                  name='confirmPassword'
+                  className='w-full focus:outline-none focus:ring focus:ring-opacity-25 focus:ring-blue-500 rounded-md border border-gray-300 p-2.5 mt-2'
+                />
+                <ErrorMessage
+                  name='confirmPassword'
+                  component='div'
+                  className='text-red-500'
+                />
+              </div>
 
-          <button type='submit' disabled={isSubmitting}>
-            Sign Up
-          </button>
-        </Form>
-      )}
-    </Formik>
+              <button
+                type='submit'
+                disabled={isSubmitting}
+                className='btn mt-4 mx-auto'>
+                Sign Up
+              </button>
+            </Form>
+          )}
+        </Formik>
+      </div>
+    </div>
 
     //   <div>
     //     <NavBar></NavBar>
