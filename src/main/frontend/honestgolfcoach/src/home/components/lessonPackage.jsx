@@ -3,22 +3,22 @@ import textTestimonial from '../../assets/textTestimonial.jpeg';
 
 const LessonPackage = () => {
   return (
-    <div className='hero min-h-screen bg-base-200'>
+    <div className='hero min-h-screen bg-white'>
       <div className='hero-content flex-col lg:flex-row-reverse'>
         <img
           src={textTestimonial}
           className='max-w-full lg:max-w-md rounded-lg shadow-2xl mb-4 lg:ml-8'
         />
         <div>
-          <h1 className='text-4xl font-bold'>
+          <h1 className='text-4xl font-bold text-black'>
             Ready to Make Real Progress?
             <br />
             Sign Up for Your 10-Lesson Package Today!
           </h1>
-          <p className='py-6 text-lg'>
+          <p className='py-6 text-lg text-black'>
             Our proven 10-lesson program is designed to help you:
             <br />
-            <ul className='list-disc ml-4'>
+            <ul className='list-disc ml-4 text-black'>
               <br />
               <li>
                 <strong>Master the fundamentals</strong>: Build a strong
@@ -51,7 +51,7 @@ const LessonPackage = () => {
             <strong> competitive price point</strong>.
           </p>
           <div >
-            <button className='btn btn-primary'>Get Started</button>
+            <button className='btn btn-primary bg-bunker hover:bg-bunkerDark focus:outline-none'>Get Started</button>
           </div>
         </div>
       </div>

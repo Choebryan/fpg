@@ -3,7 +3,7 @@ import logo from '../../assets/h_green192.png';
 
 const ContactInfo = () => {
   return (
-    <footer className='footer p-10 bg-base-200 text-base-content'>
+    <footer className='footer p-10 bg-white text-base-content text-black'>
       <aside className='flex flex-col items-center'>
         <img
           className='mb-2'

@@ -26,7 +26,7 @@ const NavBar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 ${styles.green} mx-auto flex flex-wrap w-full items-center justify-between p-1`}
+      className={`sticky top-0 z-50 ${styles.green} mx-auto flex flex-wrap w-full items-center justify-between p-1 text-white`}
       id='navbar'>
       <nav className='flex items-center'>
         <NavLink

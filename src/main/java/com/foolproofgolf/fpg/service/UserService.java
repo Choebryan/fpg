@@ -1,9 +1,37 @@
-// package com.foolproofgolf.fpg.service;
+package com.foolproofgolf.fpg.service;
 
-// import com.foolproofgolf.fpg.model.User;
+import java.util.List;
+import java.util.Optional;
 
-// public interface UserService {
-//     public User saveUser(User user);
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-//     public User getUserByUsername(String username);
-// }
+import com.foolproofgolf.fpg.db.UserRepository;
+import com.foolproofgolf.fpg.model.User;
+
+@Service
+public class UserService {
+    @Autowired
+    private UserRepository userRepository;
+
+    public User createUser(User user) {
+        return userRepository.save(user);
+    };
+
+    public Optional<User> getUserById(ObjectId id) {
+        return userRepository.findById(id);
+    };
+
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    public void deleteUser(ObjectId id) {
+        userRepository.deleteById(id);
+    }
+}
