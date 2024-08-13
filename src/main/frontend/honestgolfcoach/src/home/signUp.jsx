@@ -65,10 +65,14 @@ const SignUp = () => {
     }
   };
 
+  const loginRedirect = () => {
+    navigate('/login');
+  };
+
   return (
-    <div>
+    <div className='bg-white'>
       <NavBar />
-      <div className='container flex flex-col justify-center items-center h-screen max-w-lg w-full mx-auto'>
+      <div className=' text-black container flex flex-col justify-center items-center h-screen max-w-lg w-full mx-auto'>
         <Formik
           initialValues={{
             firstName: '',
@@ -228,9 +232,19 @@ const SignUp = () => {
               <button
                 type='submit'
                 disabled={isSubmitting}
-                className='btn mt-4 mx-auto'>
+                className='btn mt-4 mx-auto w-full'>
                 Sign Up
               </button>
+
+              <div className='mt-4 flex justify-center items-center'>
+                <span>Already have an account?</span>
+                <button
+                  type='button'
+                  className='btn text-blue-500 ml-2'
+                  onClick={() => navigate('/login')}>
+                  Log In
+                </button>
+              </div>
             </Form>
           )}
         </Formik>

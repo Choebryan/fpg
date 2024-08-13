@@ -24,7 +24,7 @@ const Home = () => {
 
 
   return (
-    <div className='home' style={{ overflow: 'scroll' }}>
+    <div className='home bg-white' style={{ overflow: 'scroll' }}>
       {/* <ResponsiveAppBar></ResponsiveAppBar> */}
       <NavBar></NavBar>
       <div className='video-container'>

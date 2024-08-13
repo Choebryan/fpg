@@ -15,6 +15,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='lessons' element={<BookLesson />} />
         <Route path='signup' element={<SignUp />} />
+        {/* <Route path='login' element = {<Login />} /> */}
         {/* </div> */}
       </Routes>
     </AuthProvider>
