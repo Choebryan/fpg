@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: GentyDemo;
+  src: url(./assets/GentyDemo-Regular.otf);
+  font-weight: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  
+  /* font-family: Arial, sans-serif; */
+
+}
+
+.home {
+  width: 100%;
+  /* height: 100%; */
+  position: relative;
+}
+
+.video-container {
+  position: relative;
+  height: 100vh;
+  /* background-color: #1a3f29; */
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; */
+  /* outline: 10px solid red; */
+}
+
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.content {
+  /* position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 68.5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(243, 242, 242);
+  z-index: 1; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  /* z-index: 2; */
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-family: GentyDemo;
+}
+
+.content p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.btn-book {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e9c46a; /* Adjust button color */
+  color: #333; /* Adjust button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  transition: background-color 0.3s;
+}
+
+.btn-book:hover {
+  background-color: #e2a412; /* Adjust hover color */
+}
+
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
+
+.app-bar-title {
+  font-family: GentyDemo;
+}
+
+.lessonContainer h1 {
+  font-family: GentyDemo;
+}
+
+@media (max-width: 375px) {
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .hero-content {
+    flex-direction: row;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.5rem;
+  }
+} */
+
+@media (max-width: 768px) {
+  .video-bg {
+    display: none;
+  }
+
+  .video-container {
+    background-color: #1a3f29;
+  }
+
+  .overlay {
+    display: none;
+  }
+
+  .content h1 {
+    font-size: 1.5rem;
+  }
+
+  .content p {
+    font-size: 0.875rem;
+  }
+
+  .btn-book {
+    font-size: 0.875rem;
+    padding: 8px 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  .content h1 {
+    font-size: 3rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .btn-book {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .content p {
+    font-size: 1.5rem;
+  }
+
+  .btn-book {
+    font-size: 1.2rem;
+  }
+}

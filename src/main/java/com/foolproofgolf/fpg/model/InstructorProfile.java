@@ -17,5 +17,9 @@ public class InstructorProfile {
     
     private String bio;
 
+        //DO I NEED THIS? WHAT EVEN IS THIS? 
+        // information regarding instructor profile so like about page? I feel like this should done 
+        //so that the frontend makes a request to the backend to get the instructor profile info
+        //which means this could be stored in the database
 
 }

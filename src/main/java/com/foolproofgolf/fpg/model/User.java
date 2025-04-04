@@ -4,30 +4,36 @@ import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 //@Builder
 
 @Document(collection = "users")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
     private ObjectId id;
 
-    private String firstName;
-
-    private String lastName;
+    @NotNull(message = "Full name is required")
+    private String fullName;
 
     private String username;
 
+    @Email(message = "Email should be valid")
+    @NotNull(message = "Email is required")
     private String email;
 
-    private String password;
+    @NotNull(message = "Google ID is required")
+    private String googleId;
 
-    private String accountType;
+    private String accountType = "user";
 
     // @DocumentReference
     // private List<Lesson> lessons;

@@ -1,30 +1,42 @@
-// package com.foolproofgolf.fpg.service;
+package com.foolproofgolf.fpg.service;
 
-// import org.springframework.beans.factory.annotation.Autowired;
-// import org.springframework.stereotype.Service;
+import java.util.List;
+import java.util.Optional;
 
-// import com.foolproofgolf.fpg.db.UserRepository;
-// import com.foolproofgolf.fpg.model.User;
+import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-// @Service
-// public class UserServiceImpl implements UserService {
+import com.foolproofgolf.fpg.db.UserRepository;
+import com.foolproofgolf.fpg.model.User;
 
-//     @Autowired
-//     private UserRepository userRepository;
+@Service
+public class UserServiceImpl implements UserService{
+    @Autowired
+    private UserRepository userRepository;
 
-//     // @Autowired
-//     // private User user;
+    @Override
+    public User createUser(User user) {
+        return userRepository.save(user);
+    };
 
-//     // public List<User> allUsers() {
-//     //     return userRepository.findAll();
-//     // }
-//     @Override
-//     public User saveUser(User user) {
-//         return userRepository.save(user);
-//     }
+    @Override
+    public Optional<User> getUserById(ObjectId id) {
+        return userRepository.findById(id);
+    };
 
-    
-//     public User getUserByUsername(String username) {
-//         return userRepository.getUserByUsername(username);
-//     }
-// }
+    @Override
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User updateUser(User user) {
+        return userRepository.save(user);
+    }
+
+    @Override
+    public void deleteUser(ObjectId id) {
+        userRepository.deleteById(id);
+    }
+}
