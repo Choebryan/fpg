@@ -1,4 +1,7 @@
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/FpgApplication.java
+/Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/config/SecurityConfig.java
+/Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/config/WebConfig.java
+/Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/controller/AuthController.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/controller/Controller.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/controller/UserController.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/db/UserRepository.java
@@ -9,6 +12,7 @@
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/model/User.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/model/VideoRecording.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/service/EmailService.java
+/Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/service/JwtService.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/service/UserService.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/service/UserServiceImpl.java
 /Users/choe/fpg/src/main/java/com/foolproofgolf/fpg/utility/JwtUtil.java

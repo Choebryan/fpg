@@ -24,8 +24,6 @@ public class User {
     @NotNull(message = "Full name is required")
     private String fullName;
 
-    private String username;
-
     @Email(message = "Email should be valid")
     @NotNull(message = "Email is required")
     private String email;

@@ -1,13 +1,3 @@
-com/foolproofgolf/fpg/db/UserRepository.class
-com/foolproofgolf/fpg/model/Testimonial.class
-com/foolproofgolf/fpg/model/InstructorProfile.class
-com/foolproofgolf/fpg/service/UserService.class
-com/foolproofgolf/fpg/model/VideoRecording.class
-com/foolproofgolf/fpg/model/Lesson.class
-com/foolproofgolf/fpg/service/EmailService.class
 com/foolproofgolf/fpg/FpgApplication.class
-com/foolproofgolf/fpg/model/FormData.class
-com/foolproofgolf/fpg/model/User.class
-com/foolproofgolf/fpg/utility/JwtUtil.class
-com/foolproofgolf/fpg/controller/UserController.class
-com/foolproofgolf/fpg/service/UserServiceImpl.class
+com/foolproofgolf/fpg/config/WebConfig.class
+com/foolproofgolf/fpg/config/SecurityConfig.class

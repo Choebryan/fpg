@@ -7,10 +7,10 @@ import BookLesson from './home/bookLesson';
 import SignUp from './home/signUp';
 import Booking from './home/components/Booking';
 import MyLessons from './myAccount/myLessons';
-import GoogleLoginButton from './home/components/GoogleLogin';
-import dotenv from 'dotenv';
-import { AuthContext } from './context/AuthContext';
-
+import GoogleLoginButton from './home/components/GoogleLoginButton';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { AuthContext } from './AuthContext';
+import { AuthProvider, useAuth } from './AuthContext';
 // function App() {
 //   return (
 //     <AuthProvider>
@@ -27,17 +27,15 @@ import { AuthContext } from './context/AuthContext';
 //   );
 // }
 
-
-dotenv.config();
-
-
 function App() {
   return (
-      <GoogleOAuthProvider clientId={process.env.YOUR_GOOGLE_CLIENT_ID}>
-          <AuthContext>
-              <AppContent />
-          </AuthContext>
-      </GoogleOAuthProvider>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_YOUR_GOOGLE_CLIENT_ID}>
+      <Router>
+        <AuthProvider>
+          <AppContent />
+        </AuthProvider>
+      </Router>
+    </GoogleOAuthProvider>
   );
 }
 
@@ -45,26 +43,23 @@ function AppContent() {
   const { loading } = useAuth();
 
   if (loading) {
-      return <div>Loading...</div>; // Show loading state while fetching user
+    return <div>Loading...</div>; // Show loading state while fetching user
   }
 
   return (
-      <Router>
-          <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/lessons" element={<BookLesson />} />
-              <Route path="/login" element={<GoogleLoginButton />} />
-              <Route path="/booking" element={<Booking />} />
-              {/* <Route path="/myLessons" element={
-                  <ProtectedRoute component={MyLessons} requiredRole="user" />
-              } />
-              <Route path="/admin/dashboard" element={
-                  <ProtectedRoute component={AdminDashboard} requiredRole="admin" />
-              } /> */}
-          </Routes>
-      </Router>
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/lessons' element={<BookLesson />} />
+      <Route path='/login' element={<GoogleLoginButton />} />
+      <Route path='/booking' element={<Booking />} />
+      {/* <Route path="/myLessons" element={
+                    <ProtectedRoute component={MyLessons} requiredRole="user" />
+                } />
+                <Route path="/admin/dashboard" element={
+                    <ProtectedRoute component={AdminDashboard} requiredRole="admin" />
+                } /> */}
+    </Routes>
   );
 }
-
 
 export default App;

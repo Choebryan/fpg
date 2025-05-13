@@ -6,22 +6,21 @@ import Testimonials from './components/testimonials';
 import OneLesson from './components/oneLesson';
 import LessonPackage from './components/lessonPackage';
 import NavBar from './components/NavBar';
-
 import { useNavigate } from 'react-router-dom';
-
+import { useAuth } from '../AuthContext'; // Add this import
 
 const Home = () => {
-  const { isLoggedIn } = useAuth();
+  const { user } = useAuth(); // Use 'user' instead of 'isLoggedIn'
   const navigate = useNavigate();
 
   const handleBookNow = () => {
-     if (isLoggedIn) {
+    if (user) {
+      // Check if user is logged in
       navigate('/lessons');
-     } else {
+    } else {
       navigate('/signup');
-     }
-  }
-
+    }
+  };
 
   return (
     <div className='home bg-white' style={{ overflow: 'scroll' }}>
@@ -36,12 +35,11 @@ const Home = () => {
         <div className='content'>
           <h1>honest golf coach</h1>
           <p>Your Friendly Neighborhood Golf Coach Here to Help You</p>
-          <a 
-            href="https://book.squareup.com/appointments/lww99gsei0kaiy/location/LWTY0GRAGER8N/services"
-            target="_blank"
-            rel="noopener noreferrer"
-            className='btn-book'
-          >
+          <a
+            href='https://book.squareup.com/appointments/lww99gsei0kaiy/location/LWTY0GRAGER8N/services'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='btn-book'>
             Book Now
           </a>
         </div>
